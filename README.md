@@ -8,7 +8,7 @@ The official implementation of ProteinBERT is available at [here](https://github
 ## Installation
 
 ```bash
-$ pip install proteinbert-pytorch
+$ pip install proteinbert-pytorch-reproduction
 ```
 
 ## Usage

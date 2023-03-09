@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-  name = 'proteinbert-pytorch',
+  name = 'proteinbert-pytorch-reproduction',
   packages = find_packages(exclude=[]),
   include_package_data = True,
   version = '0.0.1',
