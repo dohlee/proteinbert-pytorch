@@ -4,7 +4,7 @@ setup(
   name = 'proteinbert-pytorch-reproduction',
   packages = find_packages(exclude=[]),
   include_package_data = True,
-  version = '0.0.1',
+  version = '0.0.2',
   license='MIT',
   description = 'ProteinBERT - Pytorch',
   author = 'Dohoon Lee',
