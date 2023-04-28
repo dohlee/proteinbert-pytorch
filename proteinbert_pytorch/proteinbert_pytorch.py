@@ -1,6 +1,5 @@
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 import math
 
 from torch import einsum
@@ -39,9 +38,18 @@ class GlobalAttention(nn.Module):
         super().__init__()
         d_value = d_global // n_heads
 
-        self.to_q = nn.Sequential(nn.Linear(d_global, d_key * n_heads, bias=False), nn.Tanh())
-        self.to_k = nn.Sequential(nn.Linear(d_local, d_key * n_heads, bias=False), nn.Tanh())
-        self.to_v = nn.Sequential(nn.Linear(d_local, d_value * n_heads, bias=False), nn.GELU())
+        self.to_q = nn.Sequential(
+            nn.Linear(d_global, d_key * n_heads, bias=False),
+            nn.Tanh()
+        )
+        self.to_k = nn.Sequential(
+            nn.Linear(d_local, d_key * n_heads, bias=False),
+            nn.Tanh()
+        )
+        self.to_v = nn.Sequential(
+            nn.Linear(d_local, d_value * n_heads, bias=False),
+            nn.GELU()
+        )
 
         self.n_heads = n_heads
         self.d_key = d_key
